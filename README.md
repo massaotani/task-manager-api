@@ -33,6 +33,7 @@ This is a robust RESTful Backend implementation for the [roadmap.sh Task Tracker
    cd task-manager-api
 
 2. **Testing with cURL**
+   
    • Create a New Task (POST): This creates the first task. Notice that it defaults to TODO based on the Entity logic.
    ```bash
    curl -i -X POST http://localhost:8080/api/tasks \
