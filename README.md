@@ -1,4 +1,3 @@
-Markdown
 # Task Tracker API (Spring Boot)
 
 This is a robust RESTful Backend implementation for the [roadmap.sh Task Tracker](https://roadmap.sh/projects/task-tracker) project. This version provides a full API layer with a H2 database, Service-oriented architecture, and automated auditing.
