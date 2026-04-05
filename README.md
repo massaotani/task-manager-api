@@ -34,26 +34,40 @@ This is a robust RESTful Backend implementation for the [roadmap.sh Task Tracker
 
 2.  Testing:
    • Create a New Task (POST): This creates the first task. Notice that it defaults to TODO based on the Entity logic.
-curl -i -X POST http://localhost:8080/api/tasks \
--H "Content-Type: application/json" \
--d '{"description": "Buy groceries"}'
+   ```bash
+   curl -i -X POST http://localhost:8080/api/tasks \
+   -H "Content-Type: application/json" \
+   -d '{"description": "Buy groceries"}'
+   ```
 
    • List All Tasks (GET): To verify all the tasks created/updated so far.
-curl -X GET http://localhost:8080/api/tasks
+   ```bash
+   curl -X GET http://localhost:8080/api/tasks
+   ```
 
    • Update Task Description (PUT): Change the text of the task. Replace 1 with the desired Task ID.
-curl -i -X PUT http://localhost:8080/api/tasks/1 \
--H "Content-Type: application/json" \
--d '{"description": "Finish roadmap.sh and push to GitHub"}'
+   ```bash
+   curl -i -X PUT http://localhost:8080/api/tasks/1 \
+   -H "Content-Type: application/json" \
+   -d '{"description": "Finish roadmap.sh and push to GitHub"}'
+   ```
 
    • Update Task Status (PATCH): Moving the task to IN_PROGRESS.
-curl -i -X PATCH "http://localhost:8080/api/tasks/1?status=IN_PROGRESS"
+   ```bash
+   curl -i -X PATCH "http://localhost:8080/api/tasks/1?status=IN_PROGRESS"
+   ```
 
    • Filter Tasks by Status (GET with Params): Test repository’s filtering logic. Returns tasks that are IN_PROGRESS, based on the given Param.
-curl -i -X GET "http://localhost:8080/api/tasks?status=IN_PROGRESS"
+   ```bash
+   curl -i -X GET "http://localhost:8080/api/tasks?status=IN_PROGRESS"
+   ```
 
    • Mark as Done (PATCH): Mark the task as finalized.
-curl -i -X PATCH "http://localhost:8080/api/tasks/1?status=DONE"
+   ```bash
+   curl -i -X PATCH "http://localhost:8080/api/tasks/1?status=DONE"
+   ```
 
    • Delete a Task (DELETE): The final cleanup. This should return a 204 No Content (empty response) if only one Task was added.
-curl -i -v -X DELETE http://localhost:8080/api/tasks/1
+   ```bash
+   curl -i -v -X DELETE http://localhost:8080/api/tasks/1
+   ```
